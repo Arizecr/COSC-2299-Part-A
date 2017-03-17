@@ -142,4 +142,11 @@ public class RegisterTesting {
         int value = reg.testReg(u,p);
         assertEquals(incorrect,value);
     }
+    @Test (expected = NullPointerException.class)//searches and compares to current logins
+    public void errorTest2() {
+
+        String u = null;
+        String p = "password";
+        int value = reg.testReg(u,p);
+    }
 }
