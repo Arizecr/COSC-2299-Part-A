@@ -50,13 +50,28 @@ public class RegisterTesting {
         int value = reg.testReg(u,p);
         assertEquals(incorrect,value);
     }
+    @Test
+    public void invalidUsernameUppBound() {
 
-    @Test //needs to be addressed when fixing code
+        String u = "abcdef0123456789";
+        String p = "password";
+        int value = reg.testReg(u,p);
+        assertEquals(incorrect,value);
+    }
+
+    @Test //fixed in code
     public void passwordNull() {
         String u = "c1gsy";
         String p = null;
         int value = reg.testReg(u,p);
         assertEquals(incorrect,value);
+    }
+    @Test
+    public void passwordNullUppBound() {
+        String u = "c1gsyc1gsy111256";
+        String p = null;
+        int value = reg.testReg(u,p);
+        assert(correct != value);
     }
 
     @Test //(expected = ArrayIndexOutOfBoundsException.class)
@@ -86,5 +101,45 @@ public class RegisterTesting {
         String p = "password";
         int value = reg.testReg(u,p);
         assertEquals(correct,value);
+    }
+    @Test // length 14
+    public void validUsernameBound2() {
+
+        String u = "c1234978910112";
+        String p = "passwooord";
+        int value = reg.testReg(u,p);
+        assertEquals(correct,value);
+    }
+    @Test // length 16
+    public void invalidUsernameBound2() {
+
+        String u = "cccccccccccccccc";
+        String p = "passwooord";
+        int value = reg.testReg(u,p);
+        assertEquals(incorrect,value);
+    }
+    @Test // length 16
+    public void invalidUsernameBoundLarge() {
+
+        String u = "c12345678910111288888888888888888888888888888888888888888888888";
+        String p = "password";
+        int value = reg.testReg(u,p);
+        assertEquals(incorrect,value);
+    }
+    @Test // length 14
+    public void validUsernameBound3() {
+
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(u,p);
+        assertEquals(correct,value);
+    }
+    @Test // length 16
+    public void invalidUsernameBound3() {
+
+        String u = "bbc1234978910112";
+        String p = "passwooord";
+        int value = reg.testReg(u,p);
+        assertEquals(incorrect,value);
     }
 }
