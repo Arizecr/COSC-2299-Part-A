@@ -50,6 +50,7 @@ public class RegisterTesting {
         int value = reg.testReg(u,p);
         assertEquals(incorrect,value);
     }
+
     @Test //needs to be addressed when fixing code
     public void passwordNull() {
         String u = "c1gsy";
@@ -69,5 +70,21 @@ public class RegisterTesting {
         String p = "123";
         int value = reg.testReg(u,p);
         assertEquals(incorrect, value);
+    }
+    @Test // length 16
+    public void invalidUsernameBound() {
+
+        String u = "c123456789101112";
+        String p = "password";
+        int value = reg.testReg(u,p);
+        assertEquals(incorrect,value);
+    }
+    @Test // length 15
+    public void validUsernameBound() {
+
+        String u = "c12345678910112";
+        String p = "password";
+        int value = reg.testReg(u,p);
+        assertEquals(correct,value);
     }
 }

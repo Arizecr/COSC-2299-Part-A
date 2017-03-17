@@ -78,7 +78,7 @@ public class Register {
             valid++;
 
         }
-        if( password==null)
+        if( password==null|| password == "\n"||password=="")
             valid++;
 
         return valid;
