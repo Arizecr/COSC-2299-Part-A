@@ -29,6 +29,11 @@ public class LoginTesting {
         toVerify =  login.getVerification("c","c1","123");
         assertFalse(toVerify);
     }
+    @Test
+    public void IncorrectUNBoundary() {
+        toVerify =  login.getVerification("c","c0000000000000000000000000000000001","123");
+        assertFalse(toVerify);
+    }
 
     @Test
     public void IncorrectPW() {
@@ -54,7 +59,7 @@ public class LoginTesting {
         assertFalse(toVerify);
     }
 
-    /////////////////////////////////////////general testing
+    /////////////////////////////////////////should fail once addressed in code
     @Test (expected = StringIndexOutOfBoundsException.class)
     public void errorTest1() {
         login.testLogin("","fake");

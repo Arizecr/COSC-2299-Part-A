@@ -59,6 +59,7 @@ public class Register {
     private int testRegister(String username,String password){
         Login login = new Login();
         int valid = 0;
+        if (username == null||username =="\n"||username.length()==0)  return ++valid;
         //test if customer login is valid
         if(username.charAt(0) == 'c' && username.length() <= 15 && username.length()>1){
 
