@@ -192,7 +192,7 @@ public class BusinessMenu {
                         }
                         continue;
                     }
-                    else{continue;}
+                    else{ System.out.println("Enter a number between 1-8");continue;}
 
                     //Exit system
                 case 8:
