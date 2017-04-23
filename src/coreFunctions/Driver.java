@@ -31,6 +31,7 @@ public class Driver {
      * loads current booking information
      */
     public void loadCurrentBookings(String b) {
+        currentBookings = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -80,6 +81,7 @@ public class Driver {
      * loads information for past bookings
      */
     public void loadPastBookings(String b) {
+        pastBookings = new ArrayList<>();
         BufferedReader br;
         try {
 
