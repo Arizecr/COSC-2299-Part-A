@@ -17,11 +17,11 @@ public class ServicesTesting {
         //sample data used during testing
         WriteToFile w = new WriteToFile();
         Services s = new Services();
-        w.reWriteToWorkingdayTXT("b1:s1:shampooing:0-30:12:e5,e2", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s2:hair cut:0-30:40:e1,e2", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s3:shave:0-30:10:e3,e5", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s4:Women's haircut:0-30:50:e2", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s5:Dye hair service:6-30:200:e1,e2", "services.txt");
+        w.reWriteToWorkingdayTXT("b1:s1:shampooing:0-30:12", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s2:hair cut:0-30:40", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s3:shave:0-30:10", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s4:Women's haircut:0-30:50", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s5:Dye hair service:6-30:200", "services.txt");
         s.printService("b1");
     }
 
