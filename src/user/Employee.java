@@ -55,6 +55,7 @@ public class Employee {
     }
 
     public void loadEmployeeInformation() {
+        employeeList = new ArrayList<>();
         BufferedReader br;
         try {
 
