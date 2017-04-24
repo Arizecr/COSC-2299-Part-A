@@ -77,6 +77,7 @@ public class BusinessMenu {
                 //add Employee
                 case 1:
                     driver.addEmployee(bId);
+
                     continue;
 
                     //Add/Remove/Edit working days/times of Employee
@@ -198,7 +199,8 @@ public class BusinessMenu {
                 case 8:
                     System.out.println("Logging out!");
                     System.exit(0);
-
+                default:
+                    System.out.println("Enter a number between 1-8");
             }
 
             /*

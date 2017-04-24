@@ -84,6 +84,7 @@ public class Login {
      */
 
     public void loadCustomerInformation(){
+        customerList = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -136,6 +137,7 @@ public class Login {
      */
 
     private void loadOwnerInformation(){
+
         BufferedReader br;
         try {
 

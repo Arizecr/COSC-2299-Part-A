@@ -1,7 +1,9 @@
 package EmployeeAvailabilityDays;
 
+import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
+import menu.BusinessMenu;
 import test.Logging;
 import user.Employee;
 
@@ -14,6 +16,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,6 +33,7 @@ public class AvailableDay {
     private String endtime;
     private String employeeid;
     private String workday;
+    private String bid;
 
     public AvailableDay(){};
 
@@ -95,6 +99,38 @@ public class AvailableDay {
 
         }
     }
+    public void addEmployeeAvailability(String bId,String employeeID){
+        loadInfo();
+        BusinessMenu b = new BusinessMenu();
+        String workday;
+        Workday w = new Workday();
+        Scanner reader = new Scanner(System.in);
+        do {
+            do {
+                System.out.print("Enter Day: ");
+                workday = reader.nextLine().toLowerCase();
+            } while (b.checkD(workday));
+
+            //add/edit employee shifts
+
+
+            do {
+                System.out.print("Enter shift start time (hour:min): ");
+                starttime = reader.nextLine();
+            } while (b.ctime(starttime)); //check validity of start time
+            do {
+                System.out.print("Enter shift end time (hour:min): ");
+                endtime = reader.nextLine();
+            } while (b.ctime(endtime)); //check validity of end time
+        }while( w.readWork(bId,workday,starttime,endtime));
+        String x = bId+ " " +employeeID + " " + workday + " " + starttime + " " + endtime;
+        availability.add(x);
+        if(availability.size()==0){write.reWriteToWorkingdayTXT(x, "employeeAvailabilityList.txt");}
+       else{
+            write.WriteToWorkingdayTXT(x, "employeeAvailabilityList.txt");
+        }
+    }
+
 
     /*
      *
@@ -153,17 +189,11 @@ public class AvailableDay {
         if(count>0){return true;}//invalid availability exists
         return false;
     }
-    //rewrites all the new information to the textfile
-    public void rewriteToFile(ArrayList availability){
-        if(availability.size()>=0){write.reWriteToWorkingdayTXT(availability.get(0).toString(), "employeeAvailabilityList.txt");}
-        for(int i=1; i < availability.size() ;i++){
-            write.WriteToWorkingdayTXT(availability.get(i).toString(), "employeeAvailabilityList.txt");
-        }
-    }
+
 
     public String toString(){
 
-        String format = employeeid + " " + workday + " " + starttime + " " + endtime;
+        String format = bid + "" + employeeid + " " + workday + " " + starttime + " " + endtime;
 
         return format;
     }

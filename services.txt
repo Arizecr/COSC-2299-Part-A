@@ -3,3 +3,4 @@ b1:s2:hair cut:0-30:40:e1,e2
 b1:s3:shave:0-30:10:e3,e5
 b1:s4:Women's haircut:0-30:50:e2
 b1:s5:Dye hair service:6-30:200:e1,e2
+b1:s6:asdfghj:00-30:50:e1

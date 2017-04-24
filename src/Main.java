@@ -30,6 +30,7 @@ public class Main {
 
         //infinite loop
         while(true){
+            login.loadCustomerInformation(); //loads customer information
 
             System.out.print("Enter choice (1-3): ");
 
