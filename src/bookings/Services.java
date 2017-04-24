@@ -2,7 +2,6 @@ package bookings;
 
 import coreFunctions.WriteToFile;
 import test.Logging;
-import user.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -20,7 +19,7 @@ public class Services {
     private String bId;
     private String sId;
     private String name;
-    private String e;
+    //private String e;
     private String lengthT;
     private String cost;
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
@@ -28,13 +27,13 @@ public class Services {
     private static ArrayList<Services> serviceList = new ArrayList<>();
 
 
-    public Services(String bId,String sId,String name,String lengthT,String cost,String e) {
+    public Services(String bId,String sId,String name,String lengthT,String cost) {
 
         this.bId = bId;
         this.sId = sId;
         this.name = name;
         this.lengthT = lengthT;
-        this.e = e ;
+        //this.e = e ;
         this.cost= cost;
 
     }
@@ -42,7 +41,7 @@ public class Services {
     public Services() {
 
     }
-    public void printService(String b,String type) {
+    public void printService(String b) {
         BufferedReader br;
         try {
 
@@ -54,25 +53,23 @@ public class Services {
                 ArrayList<String> EOserviceList = new ArrayList<>();
                 String x;
                 String line = null;
-                if(type.equals("c")){
-                    line = "|Service ID|Name of Service | length: in Hours and Minutes| Price ($)";
-                }
-                if(type.equals("b")){
-                    line = "|Service ID|Name of Service | length: in Hours and Minutes | Price ($)| Employees ";
-                }
+
+                line = "|Service ID|Name of Service | length: in Hours and Minutes| Price ($)";
+
+
                 System.out.println(line);
 
 
                 while ((x = br.readLine()) != null) {
                     EOserviceList = new ArrayList<>();
                     // printing out each line in the file
-                    String Details[] = x.split(":", 6);
+                    String Details[] = x.split(":", 5);
                     String bid = Details[0];
                     String sid = Details[1];
                     String n = Details[2];
                     String l = Details[3];
                     String cost = Details[4];
-                    String e = Details[5];
+
                     String Time[] = l.split("-", 2);
                     String hours = Time[0];
                     String min = Time[1];
@@ -80,15 +77,12 @@ public class Services {
                     for(String emp:empID){
                         EOserviceList.add(emp);
                     }*/
-                    Services addS = new Services(bid,sid,n,l,cost,e);
+                    Services addS = new Services(bid,sid,n,l,cost);
                     serviceList.add(addS);
 
-                    if(type.equals("c")) {
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes       |%1s", sid, n, hours, min,cost);
-                    }
-                    else if(type.equals("b")){
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes       |%9s |%s", sid, n, hours, min,cost,e);
-                    }
+
+                    line = String.format("|%10s|%16s|%2s hours and %s minutes       |%1s", sid, n, hours, min,cost);
+
                     System.out.println(line);
 
 
@@ -137,15 +131,12 @@ public class Services {
             System.out.print("enter cost in $ ");
             cost = reader.nextLine();
         }while(!checkCost(cost));
-        do {
-            System.out.println("employee IDs in the form[eX,eX,eX,...]: ");
-            employees = reader.nextLine();
-        }while(checkEmployees(b,employees)||checkEqualEmployees(b,employees));//checks the employee works at the business
+
     /*    String empID[] = employees.split(",");
         for(String emp:empID){
             EOserviceList.add(emp);
         }*/
-        Services addS = new Services(b,s,n,len,cost,employees);
+        Services addS = new Services(b,s,n,len,cost);
         serviceList.add(addS);
         w.WriteToWorkingdayTXT(serviceList.get(sSize).toString(),"services.txt");
 
@@ -171,7 +162,7 @@ public class Services {
         System.out.print("Service removed");
 
     }
-
+/*
     public void removeEmployee(String b){//,String sId,String name, String time
         WriteToFile w = new WriteToFile();
         ArrayList<String> eList = new ArrayList<>();
@@ -200,7 +191,7 @@ public class Services {
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
 
-    }
+    }/*
     public void addEmployee(String b){//,String sId,String name, String time
         WriteToFile w = new WriteToFile();
         ArrayList<String> eList = new ArrayList<>();
@@ -232,7 +223,7 @@ public class Services {
 
 
         //add in code to add employees to the service
-    }
+    }*/
 
     public int checkID(String n){
         for(int i=0; i < serviceList.size() ;i++){
@@ -243,6 +234,7 @@ public class Services {
 
         return 0;
     }
+    /*
     public boolean checkEID(int s,String e){//checks if the employee does this service
         ArrayList<String> EOserviceList = new ArrayList<>();
         String ne = serviceList.get(s).e;
@@ -297,7 +289,7 @@ public class Services {
         }
         return false;
 
-    }
+    }*/
     public boolean checkName(String n){
         if(n.length()>16){
             System.out.println("name is too long(must be less than 16 characters)");
@@ -307,7 +299,7 @@ public class Services {
             System.out.println("name is too short(must be more than 3 characters)");
             return false;
         }
-        if(!n.matches("[a-zA-z' '-]+")){
+        if(!n.matches("[a-zA-z' ']+")){
             System.out.println("name is invalid [cannot contain numbers]");
             return false;
         }
@@ -387,7 +379,7 @@ public class Services {
         return "s"+count;
     }
     public String toString() {
-        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+ cost+":"+e ;
+        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+ cost ;
         //System.out.println(emp.size());
 
         return part1;

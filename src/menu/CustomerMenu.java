@@ -56,7 +56,7 @@ public class CustomerMenu {
                 case 2:
                     System.out.println("Current Bookings: ");
                     String b = "b"+Integer.toString(bID+1);
-                   // System.out.println(b);
+                    // System.out.println(b);
                     driver.viewBookingsCustomer(username,b); //view current bookings
                     continue;
                 case 3:
@@ -144,7 +144,7 @@ public class CustomerMenu {
         workday.printFile(login.businessList.get(bID).getUsername());
         System.out.println("-----------------------------");
         System.out.println("\nSelect a Service.");
-        s.printService(login.businessList.get(bID).getUsername(),"c");
+        s.printService(login.businessList.get(bID).getUsername());
 
         Scanner reader = new Scanner(System.in);
         do {

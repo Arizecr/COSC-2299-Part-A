@@ -98,6 +98,22 @@ public class Employee {
 
     }
 
+    public void printEmployeeInformation(String bID) {
+        loadEmployeeInformation();
+        System.out.println("Current Employees");
+        System.out.println("_________________");
+        for(int i=1; i < employeeList.size() ;i++){
+            if(bID.equals(employeeList.get(i).businessId))
+                System.out.println(employeeList.get(i).employeeID+" : "+employeeList.get(i).fullName);
+
+
+        }
+        System.out.println("_________________\n");
+
+    }
+    //prints error
+
+
     public boolean checkEmployeeID(String bId, String empID) {
 
         loadEmployeeInformation();
