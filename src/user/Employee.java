@@ -96,11 +96,11 @@ public class Employee {
             l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
-
     }
 
     public void printEmployeeInformation(String bID) {
         loadEmployeeInformation();
+
         System.out.println("Current Employees");
         System.out.println("_________________");
         for(int i=0; i < employeeList.size() ;i++){

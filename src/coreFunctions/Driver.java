@@ -172,9 +172,9 @@ public class Driver {
             System.out.println("Add the employees Availability: ");
             String exitAv;
             do{
-            av.addEmployeeAvailability(bId,employeeID);
-            System.out.println("Type 0 to add more times");
-            exitAv = reader.nextLine();
+                av.addEmployeeAvailability(bId,employeeID);
+                System.out.println("Type 0 to add more times");
+                exitAv = reader.nextLine();
             }while(exitAv.equals("0"));
             System.out.println("Successfully added a new employee");
             break;
@@ -191,6 +191,10 @@ public class Driver {
     public Boolean verifyEmployeeName(String name){
         if((name.length()< 3)||(name.length()>20)){
             System.out.println("Error: Name must be longer than 2 characters");
+            return true;
+        }
+        if(!name.matches("^[a-zA-Z\\s]+$")){
+            System.out.println("name is invalid [cannot contain numbers]");
             return true;
         }
         return false;
@@ -225,6 +229,12 @@ public class Driver {
         if(!isNumeric(phone)) {
             System.out.println("Error: entered a non integer as phone number.");
             return true;
+        }
+        if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
+
+            System.out.println("Invalid Mobile");
+            return true;
+
         }
         return false;
     }

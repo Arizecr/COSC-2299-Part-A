@@ -1,4 +1,5 @@
 package menu;
+import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import test.Logging;
 import user.Customer;
@@ -12,9 +13,9 @@ import java.util.logging.Logger;
 public class Register {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
 
-/*
- * Customer is presented with the registration menu
- */
+    /*
+     * Customer is presented with the registration menu
+     */
     public void registerMenu(){
         String username;
 
@@ -35,7 +36,7 @@ public class Register {
 
             while(true){
 
-                System.out.print("Username (must start with C): ");
+                System.out.print("Username (must start with c): ");
                 username = reader.nextLine();
                 if(testUsername(username)){
                     System.out.println("Username Valid\n");
@@ -91,9 +92,9 @@ public class Register {
     private boolean testUsername(String username){
         Login login = new Login();
         //isEmpty just checks for null
-        if(username.isEmpty() || (username.charAt(0) != 'c' )){
+        if(username.isEmpty() || (username.charAt(0) != 'c' ||username.length()> 15)){
 
-            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
+            System.out.println("Error: Username must start with a 'c' and cannot exceed 15 characters. Try again");
             return false;
 
         }
@@ -123,64 +124,28 @@ public class Register {
     private int testRegister(String password, String name, String address, String mobile){
         //Login login = new Login();
         int valid = 0;
-        //test if customer login is valid
 
-        /*
-        //isEmpty just checks for null
-        if(username.isEmpty() || username.charAt(0) != 'c' ){
+        Driver d=new Driver();//maximising code reuse by using same error check used in add employee
 
-            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
-            return ++valid;
+        if(d.verifyEmployeeName(name)  ){//using checking function from driver
 
-        }
-
-
-        if((username.charAt(0) == 'c') && (username.length()<= 15) && (username.length()>1)){
-
-            for(int i = 0; i< login.customerList.size(); i++) {
-
-                if (login.customerList.get(i).getUsername().equals(username)) {
-                    System.out.println("Username already exists. Re-enter valid username");
-                    return ++valid;
-                }
-            }
-
-
-        }
-        else return ++valid;
-
-        */
-
-        if(name.isEmpty() || (name.length() < 1)  ){
-
-            System.out.println("Invalid Name");
-            return ++valid;
-
-        }
-        if(!name.matches("[a-zA-z' ']+")){
-            System.out.println("name is invalid [cannot contain numbers]");
             return ++valid;
         }
-        if(address.isEmpty() || (address.length() < 1)){
+
+        if(address.isEmpty() || (address.length() < 1)||!address.matches("[a-zA-z' '0-9]+")){
+            //empty input or    length or 1            or address thais not letters or numbers
             System.out.println("Invalid Address");
             return ++valid;
 
         }
 
-        if(mobile.isEmpty() || (mobile.length() != 10)||mobile.charAt(0) != '0'||mobile.charAt(1) != '4' ){
+        if(d.verifyEmployeeMobile(mobile)){//using checking function from driver
 
             System.out.println("Invalid Mobile");
             return ++valid;
 
         }
-        int m;
-        try{
-            m = Integer.parseInt(mobile);
-        } catch (NumberFormatException e) {
-            System.out.println("Mobile number not numeric");
-            return ++valid;
 
-        }
 
         if( password.isEmpty()) {
             System.out.println("Invalid Password");
