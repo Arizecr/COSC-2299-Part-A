@@ -1,4 +1,4 @@
-b1 monday 8:00 17:00
+b1 monday 9:00 17:00
 b1 tuesday 9:00 17:00
 b1 wednesday 9:00 17:00
 b1 friday 9:00 17:00
