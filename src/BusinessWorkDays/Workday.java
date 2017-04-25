@@ -111,7 +111,7 @@ public class Workday
             //this removes the employee worktimes outside the business hours
             drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
         }
-        else{ workhours.add(n);}
+        else{System.out.println("Business Hours For "+d+" have been added"); workhours.add(n);}
         rewriteToFile(workhours);
 
     }
