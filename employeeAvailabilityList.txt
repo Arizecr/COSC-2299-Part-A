@@ -1,5 +1,10 @@
-b1 e1 Friday 00:00 20:00
-b1 e1 Monday 2:00 19:00
-b1 e1 Tuesday 2:00 19:00
-b1 e2 Friday 00:00 20:00
-b1 e9 monday 12:00 13:00
+b1 e1 Monday 09:00 17:00
+b1 e1 Tuesday 10:00 16:00
+b1 e1 Friday 09:00 17:00
+b1 e2 Friday 09:00 15:00
+b1 e9 Monday 12:00 17:00
+b2 e3 Wednesday 13:00 17:00
+b2 e3 Thursday 09:00 17:00
+b2 e5 Monday 10:00 15:00
+b2 e6 Tuesday 09:00 17:00
+b2 e7 Friday 09:00 17:00
