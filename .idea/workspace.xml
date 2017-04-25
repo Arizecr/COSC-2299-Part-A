@@ -4,6 +4,7 @@
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" afterPath="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +43,8 @@
       <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="361" column="21" lean-forward="false" selection-start-line="361" selection-start-column="21" selection-end-line="361" selection-end-column="21" />
+            <state relative-caret-position="73">
+              <caret line="172" column="65" lean-forward="false" selection-start-line="172" selection-start-column="65" selection-end-line="172" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -52,8 +53,8 @@
       <file leaf-file-name="Workday.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="102" column="66" lean-forward="false" selection-start-line="102" selection-start-column="66" selection-end-line="102" selection-end-column="66" />
+            <state relative-caret-position="1989">
+              <caret line="138" column="67" lean-forward="false" selection-start-line="138" selection-start-column="67" selection-end-line="138" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -170,13 +171,13 @@
         <option value="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" />
         <option value="$PROJECT_DIR$/src/menu/CustomerMenu.java" />
         <option value="$PROJECT_DIR$/src/bookings/Services.java" />
-        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/services.txt" />
         <option value="$PROJECT_DIR$/src/test/ServicesTesting.java" />
         <option value="$PROJECT_DIR$/src/user/Employee.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/business.txt" />
         <option value="$PROJECT_DIR$/src/menu/Register.java" />
+        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
       </list>
     </option>
@@ -763,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493093848206</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="change to readfile">
+      <created>1493094430319</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1493094430319</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -848,7 +856,8 @@
     <MESSAGE value="name fixed" />
     <MESSAGE value="new business" />
     <MESSAGE value="address" />
-    <option name="LAST_COMMIT_MESSAGE" value="address" />
+    <MESSAGE value="change to readfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to readfile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1112,16 +1121,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="361" column="21" lean-forward="false" selection-start-line="361" selection-start-column="21" selection-end-line="361" selection-end-column="21" />
+        <state relative-caret-position="73">
+          <caret line="172" column="65" lean-forward="false" selection-start-line="172" selection-start-column="65" selection-end-line="172" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="102" column="66" lean-forward="false" selection-start-line="102" selection-start-column="66" selection-end-line="102" selection-end-column="66" />
+        <state relative-caret-position="1989">
+          <caret line="138" column="67" lean-forward="false" selection-start-line="138" selection-start-column="67" selection-end-line="138" selection-end-column="67" />
           <folding />
         </state>
       </provider>

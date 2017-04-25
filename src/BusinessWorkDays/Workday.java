@@ -96,7 +96,7 @@ public class Workday
     public void readFile(String b,String d,String s,String end){
         Details();    //read the business hours from file
         int num = 0;
-        d = d.toLowerCase();
+
         Workday n = new Workday(b,d,s,end);
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
@@ -119,9 +119,10 @@ public class Workday
         Details();
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
-                if(d.equals(workhours.get(i).workD())){
+                if(d.equals(workhours.get(i).workD().toLowerCase())){
                     workhours.remove(i);
                     drive.removeWorktimes( b, d);
+                    System.out.print("Business Hours for "+ d + " removed");
                     rewriteToFile(workhours);
                 }
             }
@@ -135,7 +136,7 @@ public class Workday
         int count = 0;
         for(int i=0; i < workhours.size() ;i++) {
             if (b.equals(workhours.get(i).getBId())) {
-                if (d.equals(workhours.get(i).workD())) {
+                if (d.equals(workhours.get(i).workD().toLowerCase())) {
                     DateFormat time = new SimpleDateFormat("HH:mm");
                     count++;
                     try {

@@ -186,7 +186,7 @@ public class BusinessMenu {
                             if(nextChoice.equals( "2")){ //choose to remove business hours
                                 w.removeDayFromFile(bId,day);
                                 day = day.substring(0,1).toUpperCase() + day.substring(1);
-                                System.out.print("Business Hours for "+ day + " removed");
+
                                 valid = false;
                             }
                         }
