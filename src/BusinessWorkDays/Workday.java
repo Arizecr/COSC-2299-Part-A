@@ -96,12 +96,14 @@ public class Workday
     public void readFile(String b,String d,String s,String end){
         Details();    //read the business hours from file
         int num = 0;
+        d = d.toLowerCase();
         Workday n = new Workday(b,d,s,end);
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
-                if(d.equals(workhours.get(i).workD())){
+                if(d.equals(workhours.get(i).workD().toLowerCase())){
                     num ++;
-                    workhours.set(i, n);
+                    workhours.set(i,n);
+                    System.out.println("Business Hours For "+d+" have been updated");
                 }
             }
         }
