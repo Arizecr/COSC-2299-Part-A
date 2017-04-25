@@ -359,7 +359,7 @@ public class BusinessMenu {
         if( !timeCheck (starttime, endtime)){
             day = day.substring(0,1).toUpperCase() + day.substring(1);
             System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
-            w.readFile(bId, day, starttime, endtime);
+            w.readFile(bId, day.toLowerCase(), starttime, endtime);
             return false;
         }
         return true;
