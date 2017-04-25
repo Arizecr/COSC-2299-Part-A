@@ -103,7 +103,7 @@ public class Employee {
         loadEmployeeInformation();
         System.out.println("Current Employees");
         System.out.println("_________________");
-        for(int i=1; i < employeeList.size() ;i++){
+        for(int i=0; i < employeeList.size() ;i++){
             if(bID.equals(employeeList.get(i).businessId))
                 System.out.println(employeeList.get(i).employeeID+" : "+employeeList.get(i).fullName);
 

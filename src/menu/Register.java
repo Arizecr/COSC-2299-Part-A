@@ -157,7 +157,7 @@ public class Register {
             return ++valid;
 
         }
-        if(!name.matches("[a-zA-z' '-]+")){
+        if(!name.matches("[a-zA-z' ']+")){
             System.out.println("name is invalid [cannot contain numbers]");
             return ++valid;
         }
